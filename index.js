@@ -1,6 +1,25 @@
-const studentName = "Abhimanyu TG";
-const greeting = document.querySelector("#greeting");
-const greetButton = document.querySelector("#greet-button");
+
+const greetBtn = document.getElementById("greetBtn");
+const greetMessage = document.getElementById("greetMessage");
+
+greetBtn.addEventListener("click", function() {
+    greetMessage.textContent = "Abhimanyu says Hola!";
+});
+
+
+const submitNameBtn = document.getElementById("submitNameBtn");
+const userNameInput = document.getElementById("userNameInput");
+const displayName = document.getElementById("displayName");
+
+submitNameBtn.addEventListener("click", function() {
+    const enteredName = userNameInput.value.trim();
+    
+    if (enteredName !== "") {
+        displayName.textContent = `I deeply appreciate your presense mortal, ${enteredName}!`;
+    } else {
+        displayName.textContent = "Please enter a valid name first!";
+    }
+});
 
 function sayHello() {
   greeting.textContent = "Hello! I am " + studentName;
